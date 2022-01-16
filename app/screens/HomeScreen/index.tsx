@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, Text } from "react-native";
+import { Image, StyleSheet, Text } from "react-native";
 
 import { View } from "../../components/Themed";
 import styles from "./styles";
@@ -7,7 +7,13 @@ import styles from "./styles";
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Yo</Text>
+      <Image
+        style={styles.image}
+        source={{
+          uri: "https://i.pinimg.com/originals/67/5e/bc/675ebc2fd210a8bd5362928a51514960.jpg",
+          
+        }}
+      />
     </View>
   );
 };
