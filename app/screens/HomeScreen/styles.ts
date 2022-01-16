@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 200,
     resizeMode: 'cover',
-    borderRadius: 10, 
+    borderRadius: 7, 
   },
 });
 export default styles;
