@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   image: {
     width: 150,
     height: 200,
-    resizeMode: 'cover'
+    resizeMode: 'contain'
   },
 });
 export default styles;
