@@ -8,6 +8,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
+    "test:ios": "detox test --configuration ios",
+    "test:android": "expo build:android && detox test --configuration android",
     "test": "jest --watchAll"
   },
   "jest": {
@@ -39,8 +41,22 @@
     "@babel/core": "~7.16.7",
     "@types/react": "~17.0.38",
     "@types/react-native": "~0.66.12",
+    "detox": "^19.4.2",
+    "detox-expo-helpers": "^0.6.0",
+    "expo-detox-hook": "^1.0.10",
+    "jest": "^27.4.7",
     "jest-expo": "~44.0.1",
     "typescript": "~4.5.4"
+  },
+  "detox": {
+    "test-runner": "jest",
+    "configurations": {
+      "ios.sim": {
+        "binaryPath": "bin/Exponent.app",
+        "type": "ios.simulator",
+        "name": "iPhone 13"
+      }
+    }
   },
   "private": true
 }

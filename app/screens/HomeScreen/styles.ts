@@ -3,12 +3,14 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    padding: 20,
+    // alignItems: "center",
+    // justifyContent: "center",
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 200,
+    resizeMode: 'cover'
   },
 });
 export default styles;
