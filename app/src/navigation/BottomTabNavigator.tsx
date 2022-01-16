@@ -5,10 +5,15 @@ import * as React from "react";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
-import TabOneScreen from "../screens/HomeScreen";
+import HomeScreen from "../screens/HomeScreen";
+import MovieDetailsScreen from "../screens/MovieDetailsScreen";
 
 import TabTwoScreen from "../screens/TabTwoScreen";
-import { BottomTabParamList, HomeParamList, TabTwoParamList } from "../../types";
+import {
+  BottomTabParamList,
+  HomeParamList,
+  TabTwoParamList,
+} from "../../types";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -65,8 +70,14 @@ function TabOneNavigator() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
+        name="MovieDetailsScreen"
+        component={MovieDetailsScreen}
+        options={{ title: "" }}
+      />
+
+      <HomeStack.Screen
         name="HomeScreen"
-        component={TabOneScreen}
+        component={HomeScreen}
         options={{ headerShown: false }}
       />
     </HomeStack.Navigator>
