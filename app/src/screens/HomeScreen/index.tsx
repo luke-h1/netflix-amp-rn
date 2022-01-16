@@ -3,7 +3,7 @@ import { Image, FlatList, StyleSheet, Text } from "react-native";
 
 import { View } from "../../components/Themed";
 import styles from "./styles";
-import categories from "../../assets/data/categories";
+import categories from "../../../assets/data/categories";
 import HomeCategory from "../../components/HomeCategory";
 
 const HomeScreen = () => {

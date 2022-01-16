@@ -21,6 +21,7 @@ const HomeCategory = ({ category }: Props) => {
         key={category.id}
         data={category.movies}
         horizontal
+        showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
           <Image
             testID="test"
