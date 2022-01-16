@@ -1,15 +1,10 @@
-import * as React from "react";
-import { Image, FlatList, StyleSheet, Text } from "react-native";
-
-import { View } from "../../components/Themed";
+import React from "react";
+import { FlatList, Text, Image } from "react-native";
 import styles from "./styles";
-import categories from "../../assets/data/categories";
 
-const firstCategory = categories.items[0];
-
-const HomeScreen = () => {
+const HomeCategory = () => {
   return (
-    <View style={styles.container}>
+    <>
       <Text style={styles.title}>Popular on Netflix</Text>
       <FlatList
         data={firstCategory.movies}
@@ -24,7 +19,7 @@ const HomeScreen = () => {
           />
         )}
       />
-    </View>
+    </>
   );
 };
-export default HomeScreen;
+export default HomeCategory;
