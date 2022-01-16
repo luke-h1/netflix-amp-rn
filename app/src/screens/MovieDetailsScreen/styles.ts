@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
   year: {
     color: "#757575",
     marginRight: 5,
-    marginLeft: 5,
   },
   ageContainer: {
     backgroundColor: "#e6e229",
@@ -31,6 +30,34 @@ const styles = StyleSheet.create({
   age: {
     color: "black",
     fontWeight: "bold",
+  },
+  playButton: {
+    backgroundColor: "#fff",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 5,
+    borderRadius: 3,
+    marginVertical: 5,
+  },
+
+  playButtonText: {
+    color: "#000",
+    fontSize: 20,
+    fontWeight: "700",
+  },
+
+  downloadButton: {
+    backgroundColor: "#2b2b2b",
+    justifyContent: "center",
+    marginVertical: 5,
+    alignItems: "center",
+    padding: 5,
+    borderRadius: 3,
+  },
+  downloadButtonText: {
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "700",
   },
 });
 export default styles;
