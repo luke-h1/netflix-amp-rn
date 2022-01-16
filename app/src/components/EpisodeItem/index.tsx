@@ -2,21 +2,13 @@ import { Text, View } from "../Themed";
 import styles from "./styles";
 import { Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import { Episode } from "../../types";
 
-interface Props {
-  episode: {
-    id: string;
-    title: string;
-    poster: string;
-    duration: string;
-    plot: string;
-    video: string;
-  };
-}
 
-const EpisodeItem = ({ episode }: Props) => {
+
+const EpisodeItem = ({ episode }: Episode) => {
   return (
-    <View style={{ marginVertical: 10 }}>
+    <View style={{ margin: 10 }}>
       <View style={styles.row}>
         <Image style={styles.image} source={{ uri: episode.poster }} />
 

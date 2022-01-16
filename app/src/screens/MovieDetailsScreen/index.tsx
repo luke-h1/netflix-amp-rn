@@ -12,6 +12,8 @@ import {
 import EpisodeItem from "../../components/EpisodeItem";
 import { Picker } from "@react-native-picker/picker";
 import { useState } from "react";
+import { Video, Audio } from "expo-av";
+import VideoPlayer from "../../components/VideoPlayer";
 
 interface MovieDetailsScreenProps {
   seasons: {
@@ -32,19 +34,22 @@ interface MovieDetailsScreenProps {
   };
 }
 const MovieDetailsScreen = () => {
-  const firstEpisode = movie.seasons.items[0];
+  const firstSeason = movie.seasons.items[0];
   const seasonNames = movie.seasons.items.map((season) => season.name);
+  const [currentEpisode, setCurrentEpisode] = useState(
+    firstSeason.episodes.items[0]
+  );
   const [currentSeason, setCurrentSeason] =
-    useState<typeof firstEpisode>(firstEpisode);
+    useState<typeof firstSeason>(firstSeason);
   return (
     <View>
-      <Image
+      {/* <Image
         style={styles.image}
         source={{
           uri: movie.seasons.items[0].episodes.items[0].poster,
         }}
-      />
-
+      /> */}
+      <VideoPlayer episode={currentEpisode} />
       {/*       <EpisodeItem episode={movie.seasons.items[0].episodes.items[0]} />
        */}
       <FlatList
@@ -105,9 +110,12 @@ const MovieDetailsScreen = () => {
                 <Text style={{ color: "darkgrey", marginTop: 5 }}>Share</Text>
               </View>
             </View>
-            <Picker selectedValue={currentSeason.name} onValueChange={(itemValue, index) => {
-              setCurrentSeason(movie.seasons.items[index])
-            }}>
+            <Picker
+              selectedValue={currentSeason.name}
+              onValueChange={(_value, index) => {
+                setCurrentSeason(movie.seasons.items[index]);
+              }}
+            >
               {seasonNames &&
                 seasonNames.map((name) => (
                   <Picker.Item

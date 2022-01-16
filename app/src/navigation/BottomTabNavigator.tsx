@@ -13,7 +13,7 @@ import {
   BottomTabParamList,
   HomeParamList,
   TabTwoParamList,
-} from "../../types";
+} from "../types";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
