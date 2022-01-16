@@ -4,24 +4,15 @@ import { Image, FlatList, StyleSheet, Text } from "react-native";
 import { View } from "../../components/Themed";
 import styles from "./styles";
 import categories from "../../assets/data/categories";
-
-const firstCategory = categories.items[0];
+import HomeCategory from "../../components/HomeCategory";
 
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Popular on Netflix</Text>
       <FlatList
-        data={firstCategory.movies}
-        horizontal
+        data={categories.items}
         renderItem={({ item }) => (
-          <Image
-            testID="test"
-            style={styles.image}
-            source={{
-              uri: item.poster,
-            }}
-          />
+          <HomeCategory category={item} key={item.id} />
         )}
       />
     </View>
