@@ -55,7 +55,8 @@ const MovieDetailsScreen = () => {
       <FlatList
         style={{ marginBottom: 250 }}
         data={currentSeason.episodes.items}
-        renderItem={({ item }) => <EpisodeItem episode={item} />}
+        renderItem={({ item }) => <EpisodeItem episode={item} onPress={setCurrentEpisode}/>}
+        onTouchStart={() => console.log('hi')}
         ListHeaderComponent={
           <View style={{ padding: 12 }}>
             <Text style={styles.title}>{movie.title}</Text>

@@ -1,14 +1,17 @@
 import { Text, View } from "../Themed";
 import styles from "./styles";
-import { Image } from "react-native";
+import { Image, Pressable } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { Episode } from "../../types";
 
+interface Props {
+  episode: Episode;
+  onPress: (episode: Episode) => void;
+}
 
-
-const EpisodeItem = ({ episode }: Episode) => {
+const EpisodeItem = ({ episode, onPress }: Props) => {
   return (
-    <View style={{ margin: 10 }}>
+    <Pressable style={{ margin: 10 }} onPress={() => onPress(episode)}>
       <View style={styles.row}>
         <Image style={styles.image} source={{ uri: episode.poster }} />
 
@@ -16,10 +19,10 @@ const EpisodeItem = ({ episode }: Episode) => {
           <Text style={styles.title}>{episode.title}</Text>
           <Text style={styles.duration}>{episode.duration}</Text>
         </View>
-        <AntDesign name='download' size={24} color='#fff' />
+        <AntDesign name="download" size={24} color="#fff" />
       </View>
       <Text style={styles.plot}>{episode.plot}</Text>
-    </View>
+    </Pressable>
   );
 };
 
