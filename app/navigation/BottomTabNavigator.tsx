@@ -1,14 +1,14 @@
-import { AntDesign, MaterialIcons, Ionicons } from '@expo/vector-icons'; 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
-import * as React from 'react';
+import { AntDesign, MaterialIcons, Ionicons } from "@expo/vector-icons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
+import * as React from "react";
 
-import Colors from '../constants/Colors';
-import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
+import Colors from "../constants/Colors";
+import useColorScheme from "../hooks/useColorScheme";
+import TabOneScreen from "../screens/TabOneScreen";
 
-import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, HomeParamList, TabTwoParamList } from '../types';
+import TabTwoScreen from "../screens/TabTwoScreen";
+import { BottomTabParamList, HomeParamList, TabTwoParamList } from "../types";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -16,35 +16,41 @@ export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
 
   return (
-    <BottomTab.Navigator
-      initialRouteName="Home"
->
+    <BottomTab.Navigator initialRouteName="Home">
       <BottomTab.Screen
         name="Home"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <AntDesign name="home" size={24} color={color} />,
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="home" size={24} color={color} />
+          ),
         }}
       />
       <BottomTab.Screen
         name="Coming_Soon"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <MaterialIcons name="video-library" size={24} color={color} />,
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="video-library" size={24} color={color} />
+          ),
         }}
       />
       <BottomTab.Screen
         name="Search"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <Ionicons name="search" size={24} color={color} />,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="search" size={24} color={color} />
+          ),
         }}
       />
       <BottomTab.Screen
         name="Downloads"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <AntDesign name="download" size={24} color={color} />,
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="download" size={24} color={color} />
+          ),
         }}
       />
     </BottomTab.Navigator>
@@ -75,7 +81,7 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="TabTwoScreen"
         component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+        options={{ headerShown: false }}
       />
     </TabTwoStack.Navigator>
   );
